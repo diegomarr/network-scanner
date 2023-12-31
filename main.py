@@ -48,9 +48,11 @@ def get_os(ip_addrs):
         return "Packets could not send successfully"
 
 def print_analysis(element_entries):
-    table = PrettyTable([f"{Fore.GREEN}IP", "MAC", f"OS{Style.RESET_ALL}"])
+    # "MAC",
+    table = PrettyTable([f"{Fore.GREEN}IP", f"OS{Style.RESET_ALL}"])
     for element in element_entries:
-        table.add_row([element["ip"], element["mac"], get_os(element["ip"])])
+        # element["mac"],
+        table.add_row([element["ip"], get_os(element["ip"])])
 
     print(table)
 
